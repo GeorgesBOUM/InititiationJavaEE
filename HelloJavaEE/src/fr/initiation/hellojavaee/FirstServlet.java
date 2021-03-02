@@ -31,6 +31,7 @@ public class FirstServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("In the doGet()");
 		response.setContentType("text/html");
 		try(PrintWriter out = response.getWriter()) {
 			out.println("<!Doctype html>");
@@ -45,7 +46,7 @@ public class FirstServlet extends HttpServlet {
 			
 			out.println( "        <form method='POST' action='FirstServlet'>" );
             out.println( "            <label for='txtLogin'>Login :</label>" ); 
-            out.println( "            <input id='txtLogin' name='txtLogin' type='text' value='" +  "' autofocus /><br/>" );
+            out.println( "            <input id='txtLogin' name='txtLogin' type='text' value='" +  "' autofocus autocomplete='off'/><br/>" );
             out.println( "            <label for='txtPassword'>Password :</label>" ); 
             out.println( "            <input name='txtPassword' type='password' value='" +  "' /><br/>" );
             out.println( "            <br/>" );
@@ -62,7 +63,15 @@ public class FirstServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("In the doPost()");
+		if (request.getParameter("txtLogin").equals("bond") && request.getParameter("txtPassword").equals("007")) {
+			response.setContentType("text/html");
+			try (PrintWriter out = response.getWriter()){
+				out.println("Connexion succeed");
+			}
+		} else {
+			doGet(request, response);
+		}
 	}
 
 }
