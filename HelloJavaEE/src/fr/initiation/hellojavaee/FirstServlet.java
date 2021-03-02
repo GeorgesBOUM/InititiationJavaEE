@@ -33,17 +33,27 @@ public class FirstServlet extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html");
 		try(PrintWriter out = response.getWriter()) {
-			out.print("<!Doctype html>");
-			out.print("<html>");
-			out.print("    <head>");
-			out.print("        <meta charset=\"UTF-8\"");
-			out.print("        <title>First Servlet</title>");
-			out.print("    </head>");
-			out.print("    <body>");
-			out.print("        <h2>L'heure en temps réel:</h2>");
-			out.print("        <p>" + new Date() + "</p>");
-			out.print("    </body>");
-			out.print("</html>");
+			out.println("<!Doctype html>");
+			out.println("<html>");
+			out.println("    <head>");
+			out.println("        <meta charset=\"UTF-8\">");
+			out.println("        <title>First Servlet</title>");
+			out.println("    </head>");
+			out.println("    <body>");
+			out.println("        <h2>L'heure en temps réel:</h2>");
+			out.println("        <p>" + new Date() + "</p>");
+			
+			out.println( "        <form method='POST' action='FirstServlet'>" );
+            out.println( "            <label for='txtLogin'>Login :</label>" ); 
+            out.println( "            <input id='txtLogin' name='txtLogin' type='text' value='" +  "' autofocus /><br/>" );
+            out.println( "            <label for='txtPassword'>Password :</label>" ); 
+            out.println( "            <input name='txtPassword' type='password' value='" +  "' /><br/>" );
+            out.println( "            <br/>" );
+            out.println( "            <input name='btnConnect' type='submit' value='Se connecter' /><br/>" );
+            out.println( "        </form>" );
+			
+			out.println("    </body>");
+			out.println("</html>");
 		} 
 	}
 
