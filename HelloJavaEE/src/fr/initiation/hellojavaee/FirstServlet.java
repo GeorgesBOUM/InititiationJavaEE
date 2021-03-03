@@ -37,7 +37,8 @@ public class FirstServlet extends HttpServlet {
 			out.println("<!Doctype html>");
 			out.println("<html>");
 			out.println("    <head>");
-			out.println("        <meta charset=\"UTF-8\">");
+			out.println("        <link rel='stylesheet' type='text/css' href='style.css'>");
+			out.println("        <meta charset='UTF-8'>");
 			out.println("        <title>First Servlet</title>");
 			out.println("    </head>");
 			out.println("    <body>");
