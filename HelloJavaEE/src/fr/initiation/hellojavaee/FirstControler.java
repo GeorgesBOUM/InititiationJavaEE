@@ -28,6 +28,7 @@ public class FirstControler extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("/FirstView.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,7 +41,7 @@ public class FirstControler extends HttpServlet {
 		if (login.equals("bond") && password.equals("007") )  {
 			request.getRequestDispatcher("/Landing.jsp").forward(request, response);
 		} else {
-			request.getRequestDispatcher("/FirstJSP.jsp").forward(request, response);
+			request.getRequestDispatcher("/FirstView.jsp").forward(request, response);
 		}
 	}
 
