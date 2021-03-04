@@ -8,5 +8,6 @@
 	</head>
 <body>
 	<p>Landing page... Connexion succeed!!!</p>
+	<p>Welcome ${login}</p>
 </body>
 </html>

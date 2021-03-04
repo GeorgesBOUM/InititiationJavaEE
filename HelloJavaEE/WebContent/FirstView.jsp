@@ -4,7 +4,8 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>Connexion form</title>
+		<link rel='stylesheet' type='text/css' href='style.css'>
 	</head>
 <body>
 	<form method='POST' action='FirstControler'>
