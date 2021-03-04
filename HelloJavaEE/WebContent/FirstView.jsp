@@ -7,7 +7,7 @@
 		<title>Insert title here</title>
 	</head>
 <body>
-	<form method='POST' action='FirstJSP.jsp'>
+	<form method='POST' action='FirstControler'>
     	<label for='txtLogin'>Login :</label><input id='txtLogin' name='txtLogin' type='text' autofocus autocomplete='off'/><br/>
         <label for='txtPassword'>Password :</label><input name='txtPassword' type='password'/><br/>
         <br/>
