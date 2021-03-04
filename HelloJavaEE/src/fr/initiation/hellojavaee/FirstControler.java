@@ -27,7 +27,7 @@ public class FirstControler extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -35,7 +35,13 @@ public class FirstControler extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String login = request.getParameter("txtLogin");
+		String password= request.getParameter("txtPassword");
+		if (login.equals("bond") && password.equals("007") )  {
+			request.getRequestDispatcher("/Landing.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/FirstJSP.jsp").forward(request, response);
+		}
 	}
 
 }
