@@ -32,12 +32,12 @@ public class FirstControler extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		String login = request.getParameter("txtLogin");
 		String password = request.getParameter("txtPassword");
-		if (login == null) {
-			login = "";
-		}
-		if (password == null) {
-			password = "";
-		}
+//		if (login == null) {
+//			login = "";
+//		}
+//		if (password == null) {
+//			password = "";
+//		}
 		HttpSession model = request.getSession(true); //force session opening
 		model.setAttribute("login", login);
 		model.setAttribute("password", password);
