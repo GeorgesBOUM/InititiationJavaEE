@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.initiation.beans.FirstBean;
+
 /**
  * Servlet implementation class ControlFirstBean
  */
@@ -28,6 +30,10 @@ public class ControlFirstBean extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		FirstBean bean = new FirstBean("first bean", true);
+		//String beanData = request.getParameter("bean");
+		request.setAttribute("bean", bean);
+		request.getRequestDispatcher("/beanView.jsp").forward(request, response);
 	}
 
 	/**
