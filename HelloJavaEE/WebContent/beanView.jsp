@@ -8,6 +8,6 @@
 	</head>
 <body>
 	<p>Viewing the first bean</p>
-	<p>Bonjour. La ${bean.name } est ${bean.state }</p>
+	<p>Bonjour. La ${bean.name } est ${bean.state ? "active" : "inactive"}</p>
 </body>
 </html>
