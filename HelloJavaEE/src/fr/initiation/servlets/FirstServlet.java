@@ -1,4 +1,4 @@
-package fr.initiation.hellojavaee;
+package fr.initiation.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
