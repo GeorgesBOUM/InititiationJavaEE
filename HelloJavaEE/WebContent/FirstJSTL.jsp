@@ -16,5 +16,11 @@
 		<c:set var="variable" value="test variable"></c:set>
 		<c:out value="Voici le premier ${variable }"></c:out>
 	</p>
+	
+	<!-- Manipulating bean w/ jstl -->
+	<p>
+		<c:set target="${bean }" property="state" value="true"></c:set>
+		<c:out value='Now the ${bean.name } is ${bean.state ? "active" : "inactive"}'></c:out>
+	</p>
 </body>
 </html>
