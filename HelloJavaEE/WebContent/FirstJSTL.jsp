@@ -10,5 +10,11 @@
 <body>
 	<p>Viewing the first bean</p>
 	<p><c:out value='Bonjour. La ${bean.name } est ${bean.state ? "active" : "inactive"}'></c:out></p>
+	
+	<!-- Declare and initialize variables -->
+	<p>
+		<c:set var="variable" value="test variable"></c:set>
+		<c:out value="Voici le premier ${variable }"></c:out>
+	</p>
 </body>
 </html>
