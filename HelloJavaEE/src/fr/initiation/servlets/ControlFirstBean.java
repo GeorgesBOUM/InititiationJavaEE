@@ -33,7 +33,8 @@ public class ControlFirstBean extends HttpServlet {
 		FirstBean bean = new FirstBean("first bean", true);
 		//String beanData = request.getParameter("bean");
 		request.setAttribute("bean", bean);
-		request.getRequestDispatcher("/beanView.jsp").forward(request, response);
+		//request.getRequestDispatcher("/beanView.jsp").forward(request, response);
+		request.getRequestDispatcher("/FirstJSTL.jsp").forward(request, response);
 	}
 
 	/**
