@@ -30,7 +30,7 @@ public class ControlFirstBean extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		FirstBean bean = new FirstBean("first bean", true);
+		FirstBean bean = new FirstBean("first bean", false);
 		//String beanData = request.getParameter("bean");
 		request.setAttribute("bean", bean);
 		//request.getRequestDispatcher("/beanView.jsp").forward(request, response);
