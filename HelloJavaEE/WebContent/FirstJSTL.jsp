@@ -22,5 +22,17 @@
 		<c:set target="${bean }" property="state" value="true"></c:set>
 		<c:out value='Now the ${bean.name } is ${bean.state ? "active" : "inactive"}'></c:out>
 	</p>
+	
+	<!-- Conditions -->
+	<p>
+		<c:set var="age" value="18"></c:set>
+		<c:choose>
+			<c:when test="${age > 0 && age < 12 }">Vous êtes un enfant</c:when>
+			<c:when test="${age > 12 && age < 18 }">Vous êtes un adolescent</c:when>
+			<c:when test="${age > 18 && age < 24 }">Vous êtes un jeune adulte</c:when>
+			<c:when test="${age > 24 }">Vous êtes un adulte</c:when>
+			<c:otherwise>Vous êtes inclassable :-)</c:otherwise>
+		</c:choose>
+	</p>
 </body>
 </html>
