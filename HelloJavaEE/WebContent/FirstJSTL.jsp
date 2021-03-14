@@ -34,5 +34,13 @@
 			<c:otherwise>Vous êtes inclassable :-)</c:otherwise>
 		</c:choose>
 	</p>
+	
+	<!-- Loops -->
+	<p>
+		<c:forEach begin="0" end="4" step="1" var="i">
+			<p><c:out value="${i }"></c:out></p>
+		</c:forEach>
+	</p>
+	
 </body>
 </html>
