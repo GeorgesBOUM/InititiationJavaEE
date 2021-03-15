@@ -8,6 +8,10 @@
 		<title>Traitement formulaire</title>
 	</head>
 <body>
-
+	<p>Vous avez renseignez les informations suivantes </p>
+	<p>
+		Nom : ${nom }<br>
+		Prenom : ${Prenom }<br>
+	</p>
 </body>
 </html>

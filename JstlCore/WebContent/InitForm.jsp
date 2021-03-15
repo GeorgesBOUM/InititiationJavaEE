@@ -8,7 +8,7 @@
 		<title>Formulaire</title>
 	</head>
 <body>
-	<form method="post" action="/FormProcesser">
+	<form method="post" action="FormProcesser">
       <p>
         <label for="nom">Entrez ici votre nom de famille :</label><br />
         <input type="text" name="nom" id="nom" tabindex="10" />
