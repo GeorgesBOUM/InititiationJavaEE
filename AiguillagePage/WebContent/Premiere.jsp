@@ -9,6 +9,7 @@
 <body>
 	<p>
 		Vous êtes sur la première page
+		<a href="Deuxieme.jsp" >lien vers deuxième page</a>
 	</p>
 </body>
 </html>
