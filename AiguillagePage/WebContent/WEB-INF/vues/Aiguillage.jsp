@@ -8,6 +8,6 @@
 		<title>Aiguillage</title>
 	</head>
 <body>
-	<c:import url="/inc/Menu.jsp"></c:import>
+	<c:import url="/WEB-INF/inc/Menu.jsp"></c:import>
 </body>
 </html>
