@@ -10,7 +10,7 @@
 <body>
 	<p>
 		Vous êtes sur la première page <br>
-		<a href='<c:url value="/Deuxieme" ></c:url>'>Lien vers la deuxième page</a><br>
+		<a href='<c:url value="/vues/Deuxieme" ></c:url>'>Lien vers la deuxième page</a><br>
 	</p>
 </body>
 </html>
