@@ -1,6 +1,6 @@
 package fr.formulaires.beans;
 
-public class Profil {
+public class Utilisateur {
 	
 	private String nom;
 	private String mail;
