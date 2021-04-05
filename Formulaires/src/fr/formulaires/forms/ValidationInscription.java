@@ -38,7 +38,7 @@ public final class ValidationInscription {
         } catch ( Exception e ) {
             setErreur( CHAMP_EMAIL, e.getMessage() );
         }
-        utilisateur.setEmail( email );
+        utilisateur.setMail( email );
 
         try {
             validationMotsDePasse( motDePasse, confirmation );
@@ -46,7 +46,7 @@ public final class ValidationInscription {
             setErreur( CHAMP_PASS, e.getMessage() );
             setErreur( CHAMP_CONF, null );
         }
-        utilisateur.setMotDePasse( motDePasse );
+        utilisateur.setPass( motDePasse );
 
         try {
             validationNom( nom );
