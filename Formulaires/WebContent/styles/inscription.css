@@ -37,5 +37,6 @@ form .requis {
 }
 
 form .erreur {
-    color: #900;
+    /*color: #900;*/
+    color: #c00;
 }
