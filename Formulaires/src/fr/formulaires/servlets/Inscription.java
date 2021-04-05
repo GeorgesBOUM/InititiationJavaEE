@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.formulaires.beans.Utilisateur;
+import fr.formulaires.forms.ValidationInscription;
+
 /**
  * Servlet implementation class Inscription
  */
@@ -14,7 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 public class Inscription extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String VUE = "/WEB-INF/vues/InscriptionForm.jsp";
+	private static final String VUE_FORMULAIRE = "/WEB-INF/vues/InscriptionForm.jsp";
+	private static final String VUE_AFFICHAGE_DATA = "/WEB-INF/vues/AffichageData.jsp";
+	
+	public static final String ATT_USER = "utilisateur";
+    public static final String ATT_INSCRIPTION = "inscription";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -28,15 +35,24 @@ public class Inscription extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher(VUE).forward(request, response);
+		request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		ValidationInscription inscription = new ValidationInscription();
+		Utilisateur utilisateur = inscription.inscrireUtilisateur(request);
 		
+		request.setAttribute(ATT_INSCRIPTION, inscription);
+		request.setAttribute(ATT_USER, utilisateur);
+		
+		if (inscription.getErreurs().isEmpty()) {
+			request.getRequestDispatcher(VUE_AFFICHAGE_DATA).forward(request, response);
+		} else {
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
+		}
 	}
 
 }
