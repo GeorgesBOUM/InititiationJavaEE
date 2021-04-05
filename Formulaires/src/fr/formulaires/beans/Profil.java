@@ -2,16 +2,16 @@ package fr.formulaires.beans;
 
 public class Profil {
 	
-	private String name;
+	private String nom;
 	private String mail;
 	private String pass;
 	
 	public String getName() {
-		return name;
+		return nom;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.nom = name;
 	}
 	
 	public String getMail() {
