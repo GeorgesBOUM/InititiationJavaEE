@@ -23,9 +23,25 @@ public class ConnexionValidation {
 		return erreurs;
 	}
     
-    public Utilisateur validerConnexion() {
+    public Utilisateur validerConnexion(HttpServletRequest request) {
 		
     	Utilisateur utilisateur = new Utilisateur();
+    	String email = getValeurChamp(request, CHAMP_EMAIL);
+    	String motDePasse = getValeurChamp(request, CHAMP_PASS);
+    	
+    	try {
+			validationEmail(email);
+		} catch (Exception e) {
+			setErreur(CHAMP_EMAIL, e.getMessage());
+		}
+    	utilisateur.setMail(email);
+    	
+    	try {
+			validationMotDePasse(motDePasse);
+		} catch (Exception e) {
+			setErreur(CHAMP_PASS, e.getMessage());
+		}
+    	utilisateur.setPass(motDePasse);
     	
     	
     	
