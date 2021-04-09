@@ -54,4 +54,14 @@ public class ConnexionValidation {
             throw new Exception( "Merci de saisir une adresse mail." );
         }
 	}
+    
+    private void validationMotDePasse(String pass) throws Exception {
+		if (pass != null) {
+			if (pass.length() < 3) {
+				throw new Exception("Le mot de passe doit contenir au moins 3 caractères");
+			}
+		} else {
+			throw new Exception("Merci de saisir un mot de passe valide");
+		}
+	}
 }
