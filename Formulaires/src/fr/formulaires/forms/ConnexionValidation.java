@@ -15,6 +15,10 @@ public class ConnexionValidation {
     private String              resultat;
     private Map<String, String> erreurs      = new HashMap<String, String>();
     
+    public String getResultat() {
+		return resultat;
+	}
+    
     public Utilisateur validerConnexion() {
 		
     	Utilisateur utilisateur = new Utilisateur();
