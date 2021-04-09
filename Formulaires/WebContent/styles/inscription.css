@@ -45,3 +45,8 @@ form .info {
 	font-style: italic;
     color: #E8A22B;
 }
+
+p .succes {
+    /*color: #900;*/
+    color: rgb(78, 154, 6);
+}
