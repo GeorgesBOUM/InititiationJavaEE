@@ -3,5 +3,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <form method="get" action="deconnexion">
-	<input type="submit" value="Inscription" class="sansLabel" />
+	<input type="submit" value="Déconnexion" class="sansLabel" />
 </form>
