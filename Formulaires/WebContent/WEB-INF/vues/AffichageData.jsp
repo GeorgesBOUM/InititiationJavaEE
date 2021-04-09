@@ -12,7 +12,7 @@
 		<p>Données utilisateur</p>
 		<p>Nom: ${utilisateur.nom }</p>
 		<p>Email: ${utilisateur.mail }</p>
-		<p class="erreur">${inscription.resultat }</p>
+		<p class="succes">${inscription.resultat }</p>
 		<p><a href="<c:url value="/inscription" />">Créer un nouvel utilisateur</a></p>
 	</body>
 </html>
