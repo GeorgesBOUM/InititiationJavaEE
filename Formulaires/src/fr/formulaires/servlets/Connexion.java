@@ -33,7 +33,7 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		
 	}
 
