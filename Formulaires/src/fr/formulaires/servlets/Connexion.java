@@ -51,20 +51,17 @@ public class Connexion extends HttpServlet {
 		Utilisateur utilisateur = connexion.validerConnexion(request);
 		HttpSession session = request.getSession();
 		
-		if (connexion.getErreurs().isEmpty()) {
-			session.setAttribute(ATT_SESSION, utilisateur);
-		} else {
-			session.setAttribute(ATT_SESSION, null);
-		}
-		
 		request.setAttribute(ATT_CONNEXION, connexion);
 		request.setAttribute(ATT_USER, utilisateur);
 		
 		if (connexion.getErreurs().isEmpty()) {
+			session.setAttribute(ATT_SESSION, utilisateur);
 			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
 		} else {
+			session.setAttribute(ATT_SESSION, null);
 			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		}
+		
 	}
 
 }
