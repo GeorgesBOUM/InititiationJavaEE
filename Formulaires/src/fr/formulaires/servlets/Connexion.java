@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fr.formulaires.beans.Utilisateur;
+import fr.formulaires.forms.ConnexionValidation;
 
 /**
  * Servlet implementation class Connexion
@@ -15,10 +19,11 @@ public class Connexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String VUE_FORMULAIRE = "/WEB-INF/vues/Connexion.jsp";
-	private static final String VUE_AFFICHAGE_DATA = "/WEB-INF/vues/AffichageData.jsp";
+	private static final String VUE_RESULTAT = "/WEB-INF/vues/PageUtilisateur.jsp";
 	
 	public static final String ATT_USER = "utilisateur";
     public static final String ATT_CONNEXION = "connexion";
+    public static final String ATT_SESSION = "session";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -42,8 +47,24 @@ public class Connexion extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ConnexionValidation connexion = new ConnexionValidation();
+		Utilisateur utilisateur = connexion.validerConnexion(request);
+		HttpSession session = request.getSession();
 		
+		if (connexion.getErreurs().isEmpty()) {
+			session.setAttribute(ATT_SESSION, utilisateur);
+		} else {
+			session.setAttribute(ATT_SESSION, null);
+		}
 		
+		request.setAttribute(ATT_CONNEXION, connexion);
+		request.setAttribute(ATT_USER, utilisateur);
+		
+		if (connexion.getErreurs().isEmpty()) {
+			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
+		} else {
+			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
+		}
 	}
 
 }
