@@ -19,6 +19,10 @@ public class ConnexionValidation {
 		return resultat;
 	}
     
+    public Map<String, String> getErreurs() {
+		return erreurs;
+	}
+    
     public Utilisateur validerConnexion() {
 		
     	Utilisateur utilisateur = new Utilisateur();
