@@ -43,7 +43,11 @@ public class ConnexionValidation {
 		}
     	utilisateur.setPass(motDePasse);
     	
-    	
+    	if (erreurs.isEmpty()) {
+			resultat = "Succès de la connexion";
+		} else {
+			resultat = "Echec de la connexion";
+		}
     	
     	return utilisateur;
 	}
