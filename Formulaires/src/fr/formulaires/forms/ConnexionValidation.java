@@ -44,4 +44,14 @@ public class ConnexionValidation {
 			return valeur;
 		}
 	}
+    
+    private void validationEmail(String email) throws Exception {
+    	if ( email != null ) {
+            if ( !email.matches( "([^.@]+)(\\.[^.@]+)*@([^.@]+\\.)+([^.@]+)" ) ) {
+                throw new Exception( "Merci de saisir une adresse mail valide." );
+            }
+        } else {
+            throw new Exception( "Merci de saisir une adresse mail." );
+        }
+	}
 }
