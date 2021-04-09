@@ -28,5 +28,12 @@ public class ConnexionValidation {
 		this.erreurs.put(champ, message);
 	}
     
-    
+    private String getValeurChamp(HttpServletRequest request, String champ) {
+		String valeur = request.getParameter(champ).trim();
+		if (valeur == null || valeur.length() == 0) {
+			return null;
+		} else {
+			return valeur;
+		}
+	}
 }
