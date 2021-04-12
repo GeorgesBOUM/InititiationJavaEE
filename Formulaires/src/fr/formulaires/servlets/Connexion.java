@@ -19,11 +19,11 @@ public class Connexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private static final String VUE_FORMULAIRE = "/WEB-INF/vues/Connexion.jsp";
-	private static final String VUE_RESULTAT = "/WEB-INF/vues/PageUtilisateur.jsp";
+	private static final String VUE_RESULTAT = "/WEB-INF/vues/AccesRestreint.jsp";
 	
 	public static final String ATT_USER = "utilisateur";
     public static final String ATT_CONNEXION = "connexion";
-    public static final String ATT_SESSION = "session";
+    public static final String ATT_SESSION_USER = "sessionUtilisateur";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -55,10 +55,10 @@ public class Connexion extends HttpServlet {
 		request.setAttribute(ATT_USER, utilisateur);
 		
 		if (connexion.getErreurs().isEmpty()) {
-			session.setAttribute(ATT_SESSION, utilisateur);
+			session.setAttribute(ATT_SESSION_USER, utilisateur);
 			request.getRequestDispatcher(VUE_RESULTAT).forward(request, response);
 		} else {
-			session.setAttribute(ATT_SESSION, null);
+			session.setAttribute(ATT_SESSION_USER, null);
 			request.getRequestDispatcher(VUE_FORMULAIRE).forward(request, response);
 		}
 		
