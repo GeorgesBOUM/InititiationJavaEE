@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 public class Deconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	private static final String REDIRECTION = "/public/Deconnexion.jsp";
+	private static final String DECONNEXION = "/public/Deconnexion.jsp";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -31,9 +31,12 @@ public class Deconnexion extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		session.invalidate();
 		
-		response.sendRedirect(request.getContextPath() + REDIRECTION);
+		
+		System.out.println("chemin dans Deconnexion --> " + request.getContextPath() + DECONNEXION);
+		session.invalidate();
+		//response.sendRedirect(request.getContextPath() + DECONNEXION);
+		request.getRequestDispatcher(DECONNEXION).forward(request, response);
 	}
 
 	/**
